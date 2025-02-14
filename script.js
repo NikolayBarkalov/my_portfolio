@@ -1,126 +1,266 @@
-// Контент для страниц (русский и английский)
+// script.js
 const translations = {
   ru: {
-    home: {
-      title: "Добро пожаловать!",
-      description: "Это домашняя страница Николая Баркалова.",
-      menu: {
-        home: "Главная",
-        portfolio: "Портфолио",
-        blog: "Блог",
-        projects: "Проекты",
-        contacts: "Контакты",
+      home: {
+          intro: "Николай, 28 лет, в <span class='highlight'>поиске работы</span>, в меру упитанный мужчина, обладатель сокровенных знаний, закрыл ящик Пандоры, забрал душу у Шанг Тсунга, прыгал из самолета без парашюта, горел и танул, делал сам себе искусственное дыхание, выиграл в шахматы, используя только пешки, а так же смог выжить в <u>гос-учреждении</u>.",
+          tested: {
+              title: "Что тестировал:",
+              items: [
+                  "Веб-приложения",
+                  "Мобильные приложения",
+                  "API",
+                  "Базы данных"
+              ]
+          },
+          skills: {
+              title: "Навыки и технологии",
+              items: [
+                  "Автоматизация тестирования (Selenium, Appium)",
+                  "Ручное тестирование",
+                  "SQL",
+                  "Git",
+                  "Postman"
+              ]
+          },
+          read: {
+              title: "Что прочитал:",
+              items: [
+                  "«Совершенный код» Стив Макконнелл",
+                  "«Чистая архитектура» Роберт Мартин",
+                  "«Тестирование Дот Ком» Роман Савин"
+              ]
+          }
       },
-    },
-    blog: {
-      title: "Блог",
-      description: "Здесь вы найдете мои последние статьи.",
-      menu: {
-        home: "Главная",
-        portfolio: "Портфолио",
-        blog: "Блог",
-        projects: "Проекты",
-        contacts: "Контакты",
+      portfolio: {
+          intro: "Контент для портфолио на русском языке.",
+          tested: {
+              title: "Что тестировал (портфолио):",
+              items: [
+                  "Проект 1",
+                  "Проект 2"
+              ]
+          },
+          skills: {
+              title: "Навыки (портфолио):",
+              items: [
+                  "Навык 1",
+                  "Навык 2"
+              ]
+          },
+          read: {
+              title: "Что прочитал (портфолио):",
+              items: [
+                  "Книга 1",
+                  "Книга 2"
+              ]
+          }
       },
-    },
-    portfolio: {
-      title: "Портфолио",
-      description: "Мои проекты и работы.",
-      menu: {
-        home: "Главная",
-        portfolio: "Портфолио",
-        blog: "Блог",
-        projects: "Проекты",
-        contacts: "Контакты",
+      blog: {
+          intro: "Контент для блога на русском языке.",
+          tested: {
+              title: "Что тестировал (блог):",
+              items: [
+                  "Статья 1",
+                  "Статья 2"
+              ]
+          },
+          skills: {
+              title: "Навыки (блог):",
+              items: [
+                  "Навык 3",
+                  "Навык 4"
+              ]
+          },
+          read: {
+              title: "Что прочитал (блог):",
+              items: [
+                  "Книга 3",
+                  "Книга 4"
+              ]
+          }
       },
-    },
-    projects: {
-      title: "Проекты",
-      description: "Здесь представлены мои проекты.",
-      menu: {
-        home: "Главная",
-        portfolio: "Портфолио",
-        blog: "Блог",
-        projects: "Проекты",
-        contacts: "Контакты",
+      projects: {
+          intro: "Контент для проектов на русском языке.",
+          tested: {
+              title: "Что тестировал (проекты):",
+              items: [
+                  "Проект A",
+                  "Проект B"
+              ]
+          },
+          skills: {
+              title: "Навыки (проекты):",
+              items: [
+                  "Навык 5",
+                  "Навык 6"
+              ]
+          },
+          read: {
+              title: "Что прочитал (проекты):",
+              items: [
+                  "Книга 5",
+                  "Книга 6"
+              ]
+          }
       },
-    },
-    contacts: {
-      title: "Контакты",
-      description: "Свяжитесь со мной.",
-      menu: {
-        home: "Главная",
-        portfolio: "Портфолио",
-        blog: "Блог",
-        projects: "Проекты",
-        contacts: "Контакты",
-      },
-    },
+      contacts: {
+          intro: "Контактная информация на русском языке.",
+          tested: {
+              title: "Что тестировал (контакты):",
+              items: [
+                  "Информация 1",
+                  "Информация 2"
+              ]
+          },
+          skills: {
+              title: "Навыки (контакты):",
+              items: [
+                  "Навык 7",
+                  "Навык 8"
+              ]
+          },
+          read: {
+              title: "Что прочитал (контакты):",
+              items: [
+                  "Книга 7",
+                  "Книга 8"
+              ]
+          }
+      }
   },
   en: {
-    home: {
-      title: "Welcome!",
-      description: "This is the home page of Nikolay Barkalov.",
-      menu: {
-        home: "Home",
-        portfolio: "Portfolio",
-        blog: "Blog",
-        projects: "Projects",
-        contacts: "Contacts",
+      home: {
+          intro: "Nikolay, 28 years old, looking for a job...",
+          tested: {
+              title: "What I tested:",
+              items: [
+                  "Web applications",
+                  "Mobile applications",
+                  "API",
+                  "Databases"
+              ]
+          },
+          skills: {
+              title: "Skills and technologies",
+              items: [
+                  "Test automation (Selenium, Appium)",
+                  "Manual testing",
+                  "SQL",
+                  "Git",
+                  "Postman"
+              ]
+          },
+          read: {
+              title: "What I read:",
+              items: [
+                  "«Code Complete» Steve McConnell",
+                  "«Clean Architecture» Robert Martin",
+                  "«Testing Dot Com» Roman Savin"
+              ]
+          }
       },
-    },
-    blog: {
-      title: "Blog",
-      description: "Here you can find my latest articles.",
-      menu: {
-        home: "Home",
-        portfolio: "Portfolio",
-        blog: "Blog",
-        projects: "Projects",
-        contacts: "Contacts",
+      portfolio: {
+          intro: "Portfolio content in English.",
+          tested: {
+              title: "What I tested (portfolio):",
+              items: [
+                  "Project 1",
+                  "Project 2"
+              ]
+          },
+          skills: {
+              title: "Skills (portfolio):",
+              items: [
+                  "Skill 1",
+                  "Skill 2"
+              ]
+          },
+          read: {
+              title: "What I read (portfolio):",
+              items: [
+                  "Book 1",
+                  "Book 2"
+              ]
+          }
       },
-    },
-    portfolio: {
-      title: "Portfolio",
-      description: "Check out my projects and work.",
-      menu: {
-        home: "Home",
-        portfolio: "Portfolio",
-        blog: "Blog",
-        projects: "Projects",
-        contacts: "Contacts",
+      blog: {
+          intro: "Blog content in English.",
+          tested: {
+              title: "What I tested (blog):",
+              items: [
+                  "Article 1",
+                  "Article 2"
+              ]
+          },
+          skills: {
+              title: "Skills (blog):",
+              items: [
+                  "Skill 3",
+                  "Skill 4"
+              ]
+          },
+          read: {
+              title: "What I read (blog):",
+              items: [
+                  "Book 3",
+                  "Book 4"
+              ]
+          }
       },
-    },
-    projects: {
-      title: "Projects",
-      description: "Here are my projects.",
-      menu: {
-        home: "Home",
-        portfolio: "Portfolio",
-        blog: "Blog",
-        projects: "Projects",
-        contacts: "Contacts",
+      projects: {
+          intro: "Projects content in English.",
+          tested: {
+              title: "What I tested (projects):",
+              items: [
+                  "Project A",
+                  "Project B"
+              ]
+          },
+          skills: {
+              title: "Skills (projects):",
+              items: [
+                  "Skill 5",
+                  "Skill 6"
+              ]
+          },
+          read: {
+              title: "What I read (projects):",
+              items: [
+                  "Book 5",
+                  "Book 6"
+              ]
+          }
       },
-    },
-    contacts: {
-      title: "Contacts",
-      description: "Feel free to reach out to me.",
-      menu: {
-        home: "Home",
-        portfolio: "Portfolio",
-        blog: "Blog",
-        projects: "Projects",
-        contacts: "Contacts",
-      },
-    },
-  },
+      contacts: {
+          intro: "Contact information in English.",
+          tested: {
+              title: "What I tested (contacts):",
+              items: [
+                  "Information 1",
+                  "Information 2"
+              ]
+          },
+          skills: {
+              title: "Skills (contacts):",
+              items: [
+                  "Skill 7",
+                  "Skill 8"
+              ]
+          },
+          read: {
+              title: "What I read (contacts):",
+              items: [
+                  "Book 7",
+                  "Book 8"
+              ]
+          }
+      }
+  }
 };
 
-// Текущий язык и страница
 let currentLanguage = "ru";
 let currentPage = "home";
 
-// Элементы DOM
 const pageContent = document.getElementById("page-content");
 const pwd = document.querySelector(".pwd");
 const sidebarItems = document.querySelectorAll(".sidebar li");
@@ -130,95 +270,60 @@ const terminalHint = document.getElementById("terminal-hint");
 const themeSelect = document.getElementById("theme-select");
 const musicToggle = document.getElementById("music-toggle");
 const backgroundMusic = document.getElementById("background-music");
-const menuTexts = document.querySelectorAll(".menu-text");
-const githubStatsImg = document.getElementById("github-stats-img");
 
-// Функция для обновления контента на странице
+const introText = document.getElementById("intro-text");
+const testedTitle = document.getElementById("tested-title");
+const testedList = document.getElementById("tested-list");
+const skillsTitle = document.getElementById("skills-title");
+const skillsList = document.getElementById("skills-list");
+const readTitle = document.getElementById("read-title");
+const readList = document.getElementById("read-list");
+
 function updateContent() {
-  const translation = translations[currentLanguage][currentPage];
-  if (!translation) return;
+  const langData = translations[currentLanguage][currentPage];
 
-  // Обновляем заголовок и описание страницы
-  pageContent.innerHTML = `
-    <h1>${translation.title}</h1>
-    <p>${translation.description}</p>
-  `;
-
-  // Обновляем текст в меню
-  menuTexts.forEach((menuText, index) => {
-    menuText.textContent = translation.menu[Object.keys(translation.menu)[index]];
-  });
-
-  // Обновляем pwd
-  pwd.textContent = `~/${currentPage}`;
+  introText.innerHTML = langData.intro;
+  testedTitle.textContent = langData.tested.title;
+  testedList.innerHTML = langData.tested.items.map(item => `<li>${item}</li>`).join('');
+  skillsTitle.textContent = langData.skills.title;
+  skillsList.innerHTML = langData.skills.items.map(item => `<li>${item}</li>`).join('');
+  readTitle.textContent = langData.read.title;
+  readList.innerHTML = langData.read.items.map(item => `<li>${item}</li>`).join('');
 }
 
-// Обработчик для sidebar
-sidebarItems.forEach((item) => {
+sidebarItems.forEach(item => {
   item.addEventListener("click", () => {
-    currentPage = item.getAttribute("data-page");
-    updateContent();
+      currentPage = item.getAttribute("data-page");
+      updateContent();
   });
 });
 
-// Обработчик для выбора языка
 languageSelect.addEventListener("change", () => {
   currentLanguage = languageSelect.value;
   updateContent();
 });
 
-// Обработчик для терминала
-terminalInput.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-    const command = terminalInput.value.trim();
-    terminalInput.value = "";
-    if (command === "clear") {
-      pageContent.innerHTML = "";
-      terminalHint.style.opacity = "0";
-    } else if (command === "help") {
-      pageContent.innerHTML = `
-        <p>Available commands:</p>
-        <ul>
-          <li>clear - Clear the terminal</li>
-          <li>help - Show this help message</li>
-        </ul>
-      `;
-      terminalHint.style.opacity = "0";
-    } else {
-      terminalHint.textContent = `Command not found: ${command}`;
-      terminalHint.style.opacity = "1";
-      setTimeout(() => {
-        terminalHint.style.opacity = "0";
-      }, 3000);
-    }
-  }
-});
-
-// Обработчик для смены темы
 themeSelect.addEventListener("change", () => {
-  const selectedTheme = themeSelect.value;
-  document.body.className = selectedTheme;
+  const theme = themeSelect.value;
+  document.body.className = theme; // Устанавливаем класс напрямую
 });
 
-// Обработчик для включения/выключения музыки
 musicToggle.addEventListener("click", () => {
   if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    musicToggle.classList.remove("fa-volume-mute");
-    musicToggle.classList.add("fa-music");
+      backgroundMusic.play();
+      musicToggle.classList.remove("fa-volume-mute");
+      musicToggle.classList.add("fa-music");
   } else {
-    backgroundMusic.pause();
-    musicToggle.classList.remove("fa-music");
-    musicToggle.classList.add("fa-volume-mute");
+      backgroundMusic.pause();
+      musicToggle.classList.remove("fa-music");
+      musicToggle.classList.add("fa-volume-mute");
   }
 });
 
-// Воспроизведение музыки после первого взаимодействия
 document.addEventListener("click", () => {
   if (backgroundMusic.paused) {
-    backgroundMusic.play();
+      backgroundMusic.play();
   }
 }, { once: true });
 
-// Инициализация
 updateContent();
