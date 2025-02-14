@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Nikolay Barkalov</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iosevka&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="gruvbox-dark-hard">
+  <div class="container">
+    <!-- Логотип и pwd -->
+    <div class="header">
+      <pre class="logo">
+         ___       _        _____                   _                                
+        / _ \     / \      | ____|  _ __     __ _  (_)  _ __     ___    ___   _ __   
+       | | | |   / _ \     |  _|   | '_ \   / _` | | | | '_ \   / _ \  / _ \ | '__|  
+       | |_| |  / ___ \    | |___  | | | | | (_| | | | | | | | |  __/ |  __/ | |     
+        \__\_\ /_/   \_\   |_____| |_| |_|  \__, | |_| |_| |_|  \___|  \___| |_|     
+                                            |___/                                   
+        Nikolay Barkalov
+      </pre>
+      <div class="pwd">~/home</div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="content">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul>
+          <li data-page="home"><i class="fas fa-home"></i> <span class="menu-text">Главная</span></li>
+          <li data-page="portfolio"><i class="fas fa-briefcase"></i> <span class="menu-text">Портфолио</span></li>
+          <li data-page="blog"><i class="fas fa-blog"></i> <span class="menu-text">Блог</span></li>
+          <li data-page="projects"><i class="fas fa-project-diagram"></i> <span class="menu-text">Проекты</span></li>
+          <li data-page="contacts"><i class="fas fa-address-book"></i> <span class="menu-text">Контакты</span></li>
+        </ul>
+      </div>
+
+      <!-- Основная область -->
+      <div class="main">
+        <div class="controls">
+          <!-- Иконка для управления музыкой -->
+          <div class="music-control">
+            <i class="fas fa-music" id="music-toggle"></i>
+          </div>
+          <div class="theme-selector">
+            <select id="theme-select">
+              <option value="gruvbox-dark-hard">Gruvbox Dark Hard</option>
+              <option value="gruvbox-light-hard">Gruvbox Light Hard</option>
+              <option value="monokai">Monokai</option>
+              <option value="solarized-dark">Solarized Dark</option>
+              <option value="solarized-light">Solarized Light</option>
+              <option value="dracula">Dracula</option>
+              <option value="nord">Nord</option>
+              <option value="one-dark">One Dark</option>
+            </select>
+          </div>
+          <div class="language-selector">
+            <select id="language-select">
+              <option value="ru">🇷🇺 Русский</option>
+              <option value="en">🇺🇸 English</option>
+            </select>
+          </div>
+        </div>
+        <div class="page-content" id="page-content">
+          <!-- Контент будет подгружаться здесь -->
+          <div class="home-grid">
+            <div class="home-section">
+              <p class="intro-text" id="intro-text"></p>
+            </div>
+            <div class="home-section">
+              <h2 id="tested-title"></h2>
+              <ul id="tested-list"></ul>
+            </div>
+            <div class="home-section">
+              <h2 id="skills-title"></h2>
+              <ul id="skills-list"></ul>
+            </div>
+            <div class="home-section">
+              <h2 id="read-title"></h2>
+              <ul id="read-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Мини-терминал -->
+    <div class="terminal">
+      <span class="prompt">user@portfolio:~$</span>
+      <input type="text" id="terminal-input" autofocus>
+      <div class="terminal-hint" id="terminal-hint"></div>
+    </div>
+  </div>
+
+  <!-- Аудио-элемент -->
+  <audio id="background-music" loop>
+    <source src="assets/comfort-chain.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

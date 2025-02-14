@@ -1,0 +1,375 @@
+/* Основные стили */
+body {
+  font-family: 'Iosevka', monospace;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-size: 12px;
+  color: var(--logo-color);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pwd {
+  color: var(--pwd-color);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 20%;
+  border-right: 1px solid var(--border-color);
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  color: var(--sidebar-text-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar li:hover {
+  background-color: var(--sidebar-hover-bg);
+  transform: translateX(5px);
+}
+
+.sidebar li i {
+  margin-right: 10px;
+}
+
+.main {
+  flex: 1;
+  padding: 10px 20px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.music-control {
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 18px;
+  transition: color 0.3s ease;
+  position: relative;
+  top: 3px;
+}
+
+.music-control:hover {
+  color: var(--accent-color);
+}
+
+.theme-selector select,
+.language-selector select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  cursor: pointer;
+  font-family: 'Iosevka', monospace;
+}
+
+.page-content {
+  margin-top: 30px;
+  padding-left: 20px;
+  transition: opacity 0.3s ease;
+}
+
+/* Стили для разделения страницы "Главная" на 4 части */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.home-section {
+  position: relative;
+  padding: 20px;
+}
+
+/* Горизонтальная граница (крест) */
+.home-grid::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color) 20%,
+    var(--border-color) 80%,
+    transparent
+  );
+  transform: translateY(-50%);
+}
+
+/* Вертикальная граница (крест) */
+.home-grid::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border-color) 20%,
+    var(--border-color) 80%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+/* Стили для текста в левой-верхней секции */
+.intro-text {
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Стиль для выделенного текста "поиске работы" */
+.highlight {
+  color: var(--logo-color); /* Цвет будет меняться в зависимости от темы */
+  font-weight: bold;
+}
+
+/* Стили для терминала */
+.terminal {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--terminal-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.prompt {
+  color: var(--prompt-color);
+}
+
+#terminal-input {
+  background: none;
+  border: none;
+  color: inherit;
+  outline: none;
+  width: 80%;
+  font-family: 'Iosevka', monospace;
+}
+
+.terminal-hint {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: var(--error-color);
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-section ul li {
+  padding: 5px 0;
+  color: var(--text-color);
+}
+
+/* Стиль для выделенного текста "поиске работы" */
+.highlight {
+  color: var(--logo-color); 
+  font-weight: bold;
+}
+
+/* Подчеркивание для слова "гос-учреждении" */
+u {
+  text-decoration: underline;
+  text-decoration-color: var(--logo-color);
+}
+
+/* Темы */
+:root {
+  --bg-color: #1d2021;
+  --text-color: #ebdbb2;
+  --logo-color: #fb4934;
+  --pwd-color: #83a598;
+  --border-color: #3c3836;
+  --sidebar-text-color: #83a598;
+  --sidebar-hover-bg: #3c3836;
+  --input-bg: #3c3836;
+  --terminal-bg: #282828;
+  --prompt-color: #b8bb26;
+  --error-color: #fb4934;
+  --accent-color: #fb4934;
+}
+
+.gruvbox-dark-hard {
+  --bg-color: #1d2021;
+  --text-color: #ebdbb2;
+  --logo-color: #fb4934;
+  --pwd-color: #83a598;
+  --border-color: #3c3836;
+  --sidebar-text-color: #83a598;
+  --sidebar-hover-bg: #3c3836;
+  --input-bg: #3c3836;
+  --terminal-bg: #282828;
+  --prompt-color: #b8bb26;
+  --error-color: #fb4934;
+  --accent-color: #fb4934;
+}
+
+.gruvbox-light-hard {
+  --bg-color: #f9f5d7;
+  --text-color: #3c3836;
+  --logo-color: #9d0006;
+  --pwd-color: #076678;
+  --border-color: #bdae93;
+  --sidebar-text-color: #076678;
+  --sidebar-hover-bg: #bdae93;
+  --input-bg: #bdae93;
+  --terminal-bg: #f9f5d7;
+  --prompt-color: #79740e;
+  --error-color: #9d0006;
+  --accent-color: #af3a03;
+}
+
+.monokai {
+  --bg-color: #272822;
+  --text-color: #f8f8f2;
+  --logo-color: #f92672;
+  --pwd-color: #66d9ef;
+  --border-color: #49483e;
+  --sidebar-text-color: #66d9ef;
+  --sidebar-hover-bg: #49483e;
+  --input-bg: #49483e;
+  --terminal-bg: #272822;
+  --prompt-color: #a6e22e;
+  --error-color: #f92672;
+  --accent-color: #fd971f;
+}
+
+.solarized-dark {
+  --bg-color: #002b36;
+  --text-color: #839496;
+  --logo-color: #dc322f;
+  --pwd-color: #268bd2;
+  --border-color: #073642;
+  --sidebar-text-color: #268bd2;
+  --sidebar-hover-bg: #073642;
+  --input-bg: #073642;
+  --terminal-bg: #002b36;
+  --prompt-color: #b58900;
+  --error-color: #dc322f;
+  --accent-color: #cb4b16;
+}
+
+.solarized-light {
+  --bg-color: #fdf6e3;
+  --text-color: #657b83;
+  --logo-color: #dc322f;
+  --pwd-color: #268bd2;
+  --border-color: #eee8d5;
+  --sidebar-text-color: #268bd2;
+  --sidebar-hover-bg: #eee8d5;
+  --input-bg: #eee8d5;
+  --terminal-bg: #fdf6e3;
+  --prompt-color: #b58900;
+  --error-color: #dc322f;
+  --accent-color: #cb4b16;
+}
+
+.dracula {
+  --bg-color: #282a36;
+  --text-color: #f8f8f2;
+  --logo-color: #ff5555;
+  --pwd-color: #8be9fd;
+  --border-color: #44475a;
+  --sidebar-text-color: #8be9fd;
+  --sidebar-hover-bg: #44475a;
+  --input-bg: #44475a;
+  --terminal-bg: #282a36;
+  --prompt-color: #50fa7b;
+  --error-color: #ff5555;
+  --accent-color: #ffb86c;
+}
+
+.nord {
+  --bg-color: #2e3440;
+  --text-color: #d8dee9;
+  --logo-color: #bf616a;
+  --pwd-color: #81a1c1;
+  --border-color: #4c566a;
+  --sidebar-text-color: #81a1c1;
+  --sidebar-hover-bg: #4c566a;
+  --input-bg: #4c566a;
+  --terminal-bg: #2e3440;
+  --prompt-color: #a3be8c;
+  --error-color: #bf616a;
+  --accent-color: #ebcb8b;
+}
+
+.one-dark {
+  --bg-color: #282c34;
+  --text-color: #abb2bf;
+  --logo-color: #e06c75;
+  --pwd-color: #61afef;
+  --border-color: #3e4451;
+  --sidebar-text-color: #61afef;
+  --sidebar-hover-bg: #3e4451;
+  --input-bg: #3e4451;
+  --terminal-bg: #282c34;
+  --prompt-color: #98c379;
+  --error-color: #e06c75;
+  --accent-color: #e5c07b;
+}

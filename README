@@ -1,0 +1,9 @@
+/portfolio
+│
+├── /data
+│ └── data.json
+│
+├── index.html
+├── style.css
+├── script.js
+├── README.md (опционально)
