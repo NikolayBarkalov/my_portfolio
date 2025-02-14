@@ -133,70 +133,24 @@ const backgroundMusic = document.getElementById("background-music");
 const menuTexts = document.querySelectorAll(".menu-text");
 const githubStatsImg = document.getElementById("github-stats-img");
 
-// Элементы для динамического контента
-const introText = document.getElementById("intro-text");
-const testedTitle = document.getElementById("tested-title");
-const testedList = document.getElementById("tested-list");
-const skillsTitle = document.getElementById("skills-title");
-const skillsList = document.getElementById("skills-list");
-const readTitle = document.getElementById("read-title");
-const readList = document.getElementById("read-list");
-
-// Функция для загрузки данных из JSON
-async function loadData() {
-  try {
-    const response = await fetch('data/data.json'); // Путь к JSON-файлу
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Ошибка загрузки данных:', error);
-    return null;
-  }
-}
-
 // Функция для обновления контента на странице
-function updateContent(data) {
-  if (!data) return;
+function updateContent() {
+  const translation = translations[currentLanguage][currentPage];
+  if (!translation) return;
 
-  // Обновляем текст в левой-верхней секции
-  if (introText) {
-    introText.innerHTML = data.intro; // Используем innerHTML для вставки HTML
-  }
+  // Обновляем заголовок и описание страницы
+  pageContent.innerHTML = `
+    <h1>${translation.title}</h1>
+    <p>${translation.description}</p>
+  `;
 
-  // Обновляем "Что тестировал"
-  if (testedTitle && testedList) {
-    testedTitle.textContent = data.tested.title;
-    testedList.innerHTML = data.tested.items.map(item => `<li>${item}</li>`).join('');
-  }
+  // Обновляем текст в меню
+  menuTexts.forEach((menuText, index) => {
+    menuText.textContent = translation.menu[Object.keys(translation.menu)[index]];
+  });
 
-  // Обновляем "Навыки и технологии"
-  if (skillsTitle && skillsList) {
-    skillsTitle.textContent = data.skills.title;
-    skillsList.innerHTML = data.skills.items.map(item => `<li>${item}</li>`).join('');
-  }
-
-  // Обновляем "Что прочитал"
-  if (readTitle && readList) {
-    readTitle.textContent = data.read.title;
-    readList.innerHTML = data.read.items.map(item => `<li>${item}</li>`).join('');
-  }
-}
-
-// Обновление темы GitHub Stats
-function updateGitHubStatsTheme() {
-  const theme = document.body.className;
-  const themeMap = {
-    "gruvbox-dark-hard": "gruvbox",
-    "gruvbox-light-hard": "gruvbox_light",
-    "monokai": "monokai",
-    "solarized-dark": "solarized-dark",
-    "solarized-light": "solarized-light",
-    "dracula": "dracula",
-    "nord": "nord",
-    "one-dark": "onedark",
-  };
-  const themeName = themeMap[theme] || "gruvbox";
-  githubStatsImg.src = `https://github-readme-stats.vercel.app/api?username=NikolayBarkalov&show_icons=true&theme=${themeName}`;
+  // Обновляем pwd
+  pwd.textContent = `~/${currentPage}`;
 }
 
 // Обработчик для sidebar
@@ -244,7 +198,6 @@ terminalInput.addEventListener("keyup", (e) => {
 themeSelect.addEventListener("change", () => {
   const selectedTheme = themeSelect.value;
   document.body.className = selectedTheme;
-  updateGitHubStatsTheme();
 });
 
 // Обработчик для включения/выключения музыки
@@ -268,10 +221,4 @@ document.addEventListener("click", () => {
 }, { once: true });
 
 // Инициализация
-async function init() {
-  const data = await loadData();
-  updateContent(data);
-}
-
-// Запуск
-init();
+updateContent();
